@@ -1,0 +1,74 @@
+---
+apiVersion: v1
+
+# The repository name in registry1, excluding /ironbank/
+name: "opensource/ruby/ruby31"
+
+# List of tags to push for the repository in registry1
+# The most specific version should be the first tag and will be shown
+# on ironbank.dsop.io
+tags:
+- "3.1.2"
+- "latest"
+
+# Build args passed to Dockerfile ARGs
+args:
+  BASE_IMAGE: "redhat/ubi/ubi8"
+  BASE_TAG: "8.6"
+
+# Docker image labels
+labels:
+  org.opencontainers.image.title: "ruby31"
+  # Human-readable description of the software packaged in the image
+  org.opencontainers.image.description: "Ruby container based off UBI8"
+  # License(s) under which contained software is distributed
+  org.opencontainers.image.licenses: "Ruby"
+  # URL to find more information on the image
+  org.opencontainers.image.url: "www.ruby-lang.org"
+  # Name of the distributing entity, organization or individual
+  org.opencontainers.image.vendor: "Opensource"
+  org.opencontainers.image.version: "3.1.2"
+  # Keywords to help with search (ex. "cicd,gitops,golang")
+  mil.dso.ironbank.image.keywords: "programming,scripting,script,ruby,interpreted"
+  # This value can be "opensource" or "commercial"
+  mil.dso.ironbank.image.type: "opensource"
+  # Product the image belongs to for grouping multiple images
+  mil.dso.ironbank.product.name: "ruby"
+
+# List of resources to make available to the offline build context
+resources:
+- filename: ruby-3.1.2.tar.gz
+  url: https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz
+  validation:
+    type: sha256
+    value: 61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e
+- filename: rdoc.gem
+  url: https://rubygems.org/downloads/rdoc-6.4.0.gem
+  validation:
+    type: sha256
+    value: 5e3f949c52db3e1361ab14b1672ae284254cd40eff2df0fbb361d5bcfb66bfaf
+- filename: psych.gem
+  url: https://rubygems.org/downloads/psych-4.0.4.gem
+  validation:
+    type: sha256
+    value: 82fbfc7c10caf87aeae9d7010574db2de4f8f0463e76a184cb83d85907f85430
+- filename: stringio.gem
+  url: https://rubygems.org/downloads/stringio-3.0.2.gem
+  validation:
+    type: sha256
+    value: 71b79cbeb18070811a34aabff3beb9874d4fa2d1eebf7bbac7dea9454b07daca
+- filename: gdbm.tar.gz
+  url: http://ftp.gnu.org/gnu/gdbm/gdbm-1.23.tar.gz
+  validation:
+    type: sha256
+    value: 74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd
+
+# List of project maintainers
+maintainers:
+- email: "ironbank@dsop.io"
+  name: "Darryl Villamor"
+  username: "darryl.villamor"
+  cht_member: true
+- name: "Jesire Belleza"
+  username: "jbelleza"
+  cht_member: true

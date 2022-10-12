@@ -1,4 +1,4 @@
-name: Renovate Traefik
+name: Renovate Dependencies from Hardening Manifest
 
 on:
   workflow_dispatch:

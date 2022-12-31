@@ -2,8 +2,8 @@
 set -e
 
 mkdir -p /usr/src
-tar -xzf ruby-3.1.2.tar.gz -C /usr/src/
-rm -f ruby-3.1.2.tar.gz
+tar -xzf ruby-3.1.tar.gz -C /usr/src/
+rm -f ruby-3.1.tar.gz
 
 RUBY_DIR=$(ls /usr/src/ | grep ruby)
 

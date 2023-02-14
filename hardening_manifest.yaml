@@ -66,9 +66,6 @@ resources:
 # List of project maintainers
 maintainers:
 - email: "ironbank@dsop.io"
-  name: "Achsah Abraham"
-  username: "achsahabraham"
-  cht_member: true
-- name: "Jesire Belleza"
+  name: "Jesire Belleza"
   username: "jbelleza"
   cht_member: true
